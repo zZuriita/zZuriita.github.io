@@ -10,8 +10,10 @@
       :root { --violet:#a855f7; --pink:#ec4899; --ink:#f7f3ff; --muted:#c4b5d4; --panel:rgba(20,8,39,.68); }
       * { box-sizing:border-box; }
       html { scroll-behavior:smooth; }
-      body { margin:0; color:var(--ink); background:#08030f; font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; overflow-x:hidden; }
-      .background { position:fixed; inset:0; z-index:-3; background:url("assets/fondo-no-cogen.png") center/cover no-repeat; transform:scale(1.03); }
+      body { margin:0; color:var(--ink); background:#08030f; font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; overflow-x:hidden; cursor:url("assets/ak47-shoots.cur") 2 6, auto; }
+      a, input, label { cursor:url("assets/ak47-shoots.cur") 2 6, auto; }
+      .background { position:fixed; inset:0; z-index:-3; overflow:hidden; background:url("assets/fondo-no-cogen.png") center/cover no-repeat; }
+      .background-video { width:100%; height:100%; object-fit:cover; transform:scale(1.03); pointer-events:none; }
       .background::after { content:""; position:absolute; inset:0; background:linear-gradient(rgba(10,3,18,.53),rgba(8,3,15,.69)),radial-gradient(circle at 50% 28%, transparent 0 16%, rgba(8,3,15,.42) 46%, #08030f 100%); }
       .noise { position:fixed; inset:0; z-index:-2; pointer-events:none; opacity:.28; background-image:linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px); background-size:42px 42px; mask-image:linear-gradient(to bottom, black, transparent 80%); }
       nav { width:min(1160px, calc(100% - 40px)); height:82px; margin:auto; display:flex; align-items:center; justify-content:space-between; }
@@ -66,7 +68,7 @@
     </style>
   </head>
   <body>
-    <div class="background"></div><div class="noise"></div>
+    <div class="background" aria-hidden="true"><video class="background-video" autoplay muted loop playsinline preload="auto"><source src="assets/fondo-video-nuevo.mp4" type="video/mp4"></video></div><div class="noise"></div>
     <nav>
       <a class="brand" href="#inicio">z<span>Z</span>urita</a>
       <span class="live-status" id="live-status" title="Estado de KICK"><i class="status-dot"></i><span id="live-label">Offline</span></span>
