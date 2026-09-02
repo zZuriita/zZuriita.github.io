@@ -1,0 +1,13 @@
+zZurita — sitio listo para abrir
+
+1. Descomprimí este archivo ZIP en cualquier carpeta.
+2. Abrí index.html con doble clic.
+
+No necesita instalar nada ni tener conexión para mostrarse. La foto de fondo está incluida localmente en assets/fondo-no-cogen.png.
+
+La canción se reproduce desde el archivo local assets/vvs-switch.mp3 en bucle; usá la barra de volumen de la esquina inferior derecha para bajarla o subirla. No requiere conexión a Internet. Algunos navegadores solo permiten iniciar el sonido al primer toque en la página. En iPhone, Safari no permite que las páginas modifiquen el volumen: usá los botones físicos del teléfono.
+
+El indicador junto al logo consulta el estado del canal zzuriita en KICK al abrir la página y luego cada minuto: verde = en vivo; rojo = offline. Esta función sí requiere conexión a Internet.
+
+Los botones de las redes abren los enlaces configurados de Kick, YouTube, TikTok e Instagram.
+Los iconos locales de KICK, TikTok, YouTube e Instagram fueron obtenidos del repositorio público Simple Icons (CC0-1.0): https://simpleicons.org/
