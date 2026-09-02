@@ -99,11 +99,15 @@
       const music = document.getElementById('background-music');
       const liveStatus = document.getElementById('live-status');
       const liveLabel = document.getElementById('live-label');
+      music.muted = false;
       music.volume = Number(volume.value) / 100;
       const startMusic = () => music.play().catch(() => {});
       startMusic();
       document.addEventListener('pointerdown', startMusic, { once: true });
       document.addEventListener('keydown', startMusic, { once: true });
+      volume.addEventListener('pointerdown', startMusic);
+      volume.addEventListener('touchstart', startMusic, { passive: true });
+      volume.addEventListener('change', startMusic);
       volume.addEventListener('input', () => {
         music.volume = Number(volume.value) / 100;
         startMusic();
