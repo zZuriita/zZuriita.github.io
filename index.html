@@ -92,7 +92,7 @@
     </main>
     <footer><span>© <span id="year"></span> zZurita. Todos los derechos reservados.</span><span>Hecho para la comunidad.</span></footer>
     <div class="volume-control" aria-label="Control de volumen"><span class="music-mark" aria-hidden="true">♫</span><label for="volume">Volumen</label><input id="volume" type="range" min="0" max="100" value="35" aria-label="Volumen de la música"></div>
-    <audio class="site-audio" id="background-music" loop preload="auto"><source src="assets/vvs-switch.mp3" type="audio/mpeg"></audio>
+    <audio class="site-audio" id="background-music" loop preload="metadata" playsinline><source src="assets/vvs-switch.mp3" type="audio/mpeg"></audio>
     <script>
       document.getElementById('year').textContent = new Date().getFullYear();
       const volume = document.getElementById('volume');
@@ -104,7 +104,10 @@
       startMusic();
       document.addEventListener('pointerdown', startMusic, { once: true });
       document.addEventListener('keydown', startMusic, { once: true });
-      volume.addEventListener('input', () => { music.volume = Number(volume.value) / 100; });
+      volume.addEventListener('input', () => {
+        music.volume = Number(volume.value) / 100;
+        startMusic();
+      });
       async function updateLiveStatus() {
         try {
           const response = await fetch('https://kick.com/api/v2/channels/zzuriita');
